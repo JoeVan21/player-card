@@ -23,6 +23,48 @@
   <player-card></player-card>
 
   <script type="module" src="./src/player-card.js"></script>
+  <script>
+    document.querySelector('.btnDet').addEventListener('click', function(e) {
+  const detail = document.querySelector('.body')
+  if (detail.style.display === "none"){
+    detail.style.display = "block"
+  } else {
+    detail.style.display = "none";
+  }
+});
+//Details Button 
+document.querySelector('.btnDup').addEventListener('click', function(e) {
+  const copy = document.querySelector('.borders').cloneNode(true);
+ document.body.appendChild(copy);
+});
+// Duplicate 
+
+document.querySelector('#del').addEventListener('click', function(e) {
+ let checkDel = confirm("Do you really want to remove Nick Singleton?");
+  if (checkDel) {
+    if (document.querySelector('.borders:last-child') !== document.querySelector('.borders')) {    document.querySelector('.borders:last-child').remove();      
+    }
+    else {
+      alert("Nobody can stop the run");
+    }
+  }
+});
+//Delete 
+
+document.querySelector('.btnHead').addEventListener('click', function(e) {
+  let title = prompt("You dare change Singletons Name?!");
+  if (title) {
+    document.querySelector('.borders h2').innerText = title;
+  }
+});
+//Header
+
+document.querySelector('.btnBack').addEventListener("click", (e) => { 
+   color = ("Blue");
+   document.querySelector('.card').style.backgroundColor = color; 
+});
+//Background Color 
+  </script>
 </body>
 
 </html>
