@@ -20,35 +20,44 @@
 </head>
 
 <body>
-  <player-card></player-card>
+  <div class="buttons">
+  
+    <button class="btnDup">Duplicate</button>
+    <button id="del">Delete</button>
+    <button button[data-toggle-btn]>Details</button> 
+    <button class="btnHead">Change Header</button>
+    <button  class="btnBack">Change Background</button>
+    
+    </div>
+  <div id="app">
 
+  <player-card>
+  <ul>
+  Star Football Runningback for the Penn State Nittany Lions!<br>Big Ten's Freshman of the Year in 2022
+  </ul>
+  </player-card>
+</div>
   <script type="module" src="./src/player-card.js"></script>
   <script>
-    document.querySelector('.btnDet').addEventListener('click', function(e) {
-  const detail = document.querySelector('.body')
-  if (detail.style.display === "none"){
-    detail.style.display = "block"
-  } else {
-    detail.style.display = "none";
-  }
-});
+    
 //Details Button 
 document.querySelector('.btnDup').addEventListener('click', function(e) {
   const copy = document.querySelector('.borders').cloneNode(true);
  document.body.appendChild(copy);
 });
 // Duplicate 
-
 document.querySelector('#del').addEventListener('click', function(e) {
- let checkDel = confirm("Do you really want to remove Nick Singleton?");
-  if (checkDel) {
-    if (document.querySelector('.borders:last-child') !== document.querySelector('.borders')) {    document.querySelector('.borders:last-child').remove();      
+  let wantsTo = confirm("Do you really want to remove Nick Singleton?");
+  if (wantsTo) {
+    if (document.querySelector('#app :last-child') !== document.querySelector('player-card')) {
+      document.querySelector('#app :last-child').remove();      
     }
     else {
       alert("Nobody can stop the run");
     }
   }
 });
+
 //Delete 
 
 document.querySelector('.btnHead').addEventListener('click', function(e) {
@@ -62,6 +71,17 @@ document.querySelector('.btnHead').addEventListener('click', function(e) {
 document.querySelector('.btnBack').addEventListener("click", (e) => { 
    color = ("Blue");
    document.querySelector('.card').style.backgroundColor = color; 
+});
+
+document.querySelector('button[data-toggle-btn]').addEventListener('click', (e) => {
+  const details = document.querySelector('player-card').shadowRoot.querySelector('details')
+  console.log(details);
+  if (details.getAttribute('open')) {
+    details.removeAttribute('open');
+  }
+  else {
+    details.setAttribute('open','open');    
+  }
 });
 //Background Color 
   </script>

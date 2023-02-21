@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 
-const logo = new URL('../assets/open-wc-logo.svg', import.meta.url).href;
-
+const playerImg = new URL('../assets/nicks.jpg', import.meta.url).href;
+import "@lrnwebcomponents/meme-maker/meme-maker.js";
 class PlayerCard extends LitElement {
   static properties = {
     header: { type: String },
@@ -53,31 +53,36 @@ class PlayerCard extends LitElement {
   }
   `;
 
+
   constructor() {
     super();
-    this.header = 'My app';
+    this.sum = 'Details';
+    this.name='Nick S';
+    this.top = 'Big';
+    this.bottom = 'Ten';
   }
 
   render() {
     return html`
-    <div class="buttons">
-  
-    <button class="btnDup">Duplicate</button>
-    <button id="del">Delete</button>
-    <button class="btnDet">Details</button> 
-    <button class="btnHead">Change Header</button>
-    <button  class="btnBack">Change Background</button>
-    
-    </div>
   
   <div class="borders">
     <div class="card">
-    <h2>Nick Singleton </h2> 
+    <h2>${this.name} </h2> 
   
-  <img src=https://www.si.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTkyMjQwNTI1ODcxNDI1MDcw/nicholas-singleton.jpg alt="Nick Singleton" /> 
-    
+  
+  <meme-maker image-url="${playerImg}"
+  top-text="${this.top}"
+  bottom-text="${this.bottom}">
+</meme-maker>
     <div>
-      <p class="body" >Star Football Runningback for the Penn State Nittany Lions!<br>Big Ten's Freshman of the Year in 2022</p>
+    <details class="details">
+          <summary>${this.sum}</summary>
+          <div>
+            <slot></slot>
+          </div>
+        </details>
+
+     
       </div>
     </div>
   </div>
