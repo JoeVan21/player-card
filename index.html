@@ -24,7 +24,7 @@
   
     <button class="btnDup">Duplicate</button>
     <button id="del">Delete</button>
-    <button button[data-toggle-btn]>Details</button> 
+    <button data-toggle-btn>Details</button> 
     <button class="btnHead">Change Header</button>
     <button  class="btnBack">Change Background</button>
     
@@ -50,8 +50,6 @@
     details.setAttribute('open','open');    
   }
 });
-
-
 //Details Button 
 document.querySelector('.btnDup').addEventListener('click', function(e) {
   const copy = document.querySelector('player-card').cloneNode();
