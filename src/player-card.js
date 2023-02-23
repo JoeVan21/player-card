@@ -46,7 +46,7 @@ class PlayerCard extends LitElement {
   }
   
   
-  @media screen and (max-width:800px) {
+  @media screen and (max-width:501px) and (max-width:800px) {
     background-color: Red;
     text-transform: var;
     width: var;
