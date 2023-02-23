@@ -4,7 +4,10 @@ const playerImg = new URL('../assets/nicks.jpg', import.meta.url).href;
 import "@lrnwebcomponents/meme-maker/meme-maker.js";
 class PlayerCard extends LitElement {
   static properties = {
-    header: { type: String },
+    name: { type: String },
+    sum: {type: String},
+    top:{type: String},
+    bottom:{type: String},
   };
 
   static styles = css`
@@ -67,7 +70,7 @@ class PlayerCard extends LitElement {
   
   <div class="borders">
     <div class="card">
-    <h2>${this.name} </h2> 
+    <h2>${this.name}</h2> 
   
   
   <meme-maker image-url="${playerImg}"

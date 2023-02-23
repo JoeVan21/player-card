@@ -15,6 +15,25 @@
       font-family: sans-serif;
       background-color: #ededed;
     }
+    button {
+    cursor:pointer;
+    margin: 1px;
+    border: 2px dashed blue;
+    color:#00FFFF; 
+    background-color: black;
+    border-radius:20px;
+   text-transform: uppercase;
+  padding: 8px 8px;
+  }
+  button:hover{
+    background-color: #0400FE;
+  }
+  button:focus{
+    background-color: #0400FE;
+  }
+  li{
+    list-style: none;
+  }
   </style>
   <title>player-card</title>
 </head>
@@ -73,7 +92,7 @@ document.querySelector('#del').addEventListener('click', function(e) {
 document.querySelector('.btnHead').addEventListener('click', function(e) {
   let name = prompt("You dare change Singletons Name?!");
   if (name) {
-    document.querySelector('.borders h2').innerText = name;
+    document.querySelector('player-card').name = name;
   }
 });
 //Header
