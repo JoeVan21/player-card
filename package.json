@@ -1,9 +1,9 @@
 {
-  "name": "player-card",
+  "name": "jmv-player-card",
   "description": "Webcomponent player-card following open-wc recommendations",
   "license": "MIT",
   "author": "player-card",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
